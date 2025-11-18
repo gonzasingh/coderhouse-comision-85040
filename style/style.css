@@ -1,0 +1,414 @@
+/* ================================
+   Variables y reset básico
+=================================== */
+
+:root {
+  /* Paleta inspirada en el arte del sitio */
+  --bg: #0a0a12;
+  --text: #f7f7fb;
+  --muted: #cfd2ff;
+  --accent: #6cf1ff;
+  --accent-2: #ff6cf1;
+  --accent-3: #ffd36c;
+
+  --brand: #ffffff;
+  --link: #ffffff;
+  --link-hover: #ffd36c;
+
+  --btn-bg: #ffffff;
+  --btn-text: #0a0a12;
+  --btn-glow: rgba(255, 211, 108, 0.45);
+
+  --maxw: 1200px;
+  --radius: 14px;
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.5);
+
+  --fs-xxl: clamp(2.6rem, 6vw, 5rem);
+  --fs-xl: clamp(2rem, 4.8vw, 3.6rem);
+  --fs-lg: clamp(1.4rem, 2.6vw, 2rem);
+  --fs-md: 1rem;
+  --fs-sm: 0.9rem;
+
+  --space-1: 8px;
+  --space-2: 14px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+
+  --blur: 28px;
+}
+
+/* Reset y accesibilidad base */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 30% 20%, #1a1330 0%, #0a0a12 45%, #07070c 100%);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--link); text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outline-offset: 3px; }
+::selection { background: #ffd36c33; color: var(--brand); }
+
+/* ================================
+   Layout principal
+=================================== */
+
+.site {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Contenedor ancho */
+.container {
+  width: min(100%, var(--maxw));
+  margin: 0 auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+/* ================================
+   Navegación superior
+=================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(10,10,18,0.75) 0%, rgba(10,10,18,0.35) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+
+.nav__brand {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2.2vw, 26px);
+}
+
+.nav__link {
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.92;
+  transition: opacity 180ms ease, color 180ms ease;
+}
+.nav__link:hover { color: var(--link-hover); opacity: 1; }
+
+/* CTA secundario (Store / Sign up) */
+.nav__cta {
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+.nav__cta:hover { border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+
+/* ================================
+   Hero “Moon Music”
+=================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(60px, 12vw, 140px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: -10% -20%;
+  z-index: -2;
+  filter: saturate(110%) contrast(105%);
+  opacity: 0.28;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 800px at 70% 30%, rgba(108,241,255,0.25), transparent 70%),
+    radial-gradient(900px 600px at 25% 65%, rgba(255,108,241,0.25), transparent 70%),
+    radial-gradient(700px 500px at 50% 50%, rgba(255,211,108,0.25), transparent 75%);
+}
+
+/* Halo / corazón luminoso */
+.hero__emblem {
+  --size: clamp(110px, 18vw, 220px);
+  width: var(--size);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 50%;
+  position: relative;
+  box-shadow:
+    0 0 0 10px rgba(255,255,255,0.06),
+    0 0 60px 20px rgba(255,211,108,0.25),
+    inset 0 0 40px rgba(255,108,241,0.25);
+  background: conic-gradient(from 180deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+  animation: pulseGlow 3.6s ease-in-out infinite;
+}
+.hero__emblem::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #fff 0%, #ffd36c 40%, transparent 65%);
+  filter: blur(6px);
+  opacity: 0.9;
+}
+
+/* Títulos principales */
+.hero__title {
+  margin-top: var(--space-3);
+  font-size: var(--fs-xxl);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  margin-top: var(--space-1);
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Frase manuscrita */
+.hero__scribble {
+  position: absolute;
+  top: clamp(12px, 4vw, 28px);
+  right: clamp(14px, 5vw, 40px);
+  font-family: "Homemade Apple", "Bradley Hand", "Comic Sans MS", system-ui, sans-serif;
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  color: #fff;
+  opacity: 0.9;
+  transform: rotate(-4deg);
+  text-shadow: 0 2px 18px rgba(255, 211, 108, 0.35);
+}
+
+/* ================================
+   Sección “A Film For The Future”
+=================================== */
+
+.film {
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+}
+
+.film__title {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.film__moons {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.6vw, 18px);
+  margin-top: var(--space-2);
+}
+.film__moon {
+  --size: clamp(24px, 3.6vw, 44px);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, #fff 6%, #f7f7fb 18%, #cfd2ff 45%, #8da0ff 70%, transparent 75%);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  position: relative;
+}
+.film__moon[data-phase="new"]     { background: radial-gradient(circle, #1a1a25 40%, #0a0a12 70%); }
+.film__moon[data-phase="waxing"]  { clip-path: ellipse(45% 50% at 60% 50%); }
+.film__moon[data-phase="full"]    { background: radial-gradient(circle at 50% 50%, #fff 10%, #f7f7fb 30%, #e6e8ff 70%); }
+.film__moon[data-phase="waning"]  { clip-path: ellipse(45% 50% at 40% 50%); }
+
+.film__cta {
+  margin-top: var(--space-3);
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.4),
+    0 0 0 10px var(--btn-glow);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.film__cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.5),
+    0 0 0 14px rgba(255, 211, 108, 0.55);
+}
+.film__cta svg { width: 18px; height: 18px; }
+
+/* ================================
+   Sección noticias / grid contenido
+=================================== */
+
+.section {
+  margin-block: var(--space-5);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+}
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow-lg);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.55);
+}
+.card__media { aspect-ratio: 16/9; background: #151522; }
+.card__content { padding: 16px 18px 18px; }
+.card__title {
+  font-weight: 700;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  margin: 6px 0 4px;
+}
+.card__meta {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+/* ================================
+   Footer
+=================================== */
+
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(10,10,18,0.35), rgba(10,10,18,0.65));
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  opacity: 0.9;
+}
+.footer__links a { font-size: var(--fs-sm); }
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer__social a {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.footer__social a:hover { border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+
+.footer__legal {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+/* ================================
+   Tipografía display opcional
+=================================== */
+
+/* Si cargas fuentes personalizadas, mapea aquí.
+   Ejemplo:
+@font-face {
+  font-family: "MoonDisplay";
+  src: url("/fonts/moon-display.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.hero__title { font-family: "MoonDisplay", Inter, system-ui, sans-serif; }
+*/
+
+/* ================================
+   Utilidades
+=================================== */
+
+.u-center { display: grid; place-items: center; }
+.u-hide { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+/* ================================
+   Animaciones
+=================================== */
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow:
+    0 0 0 10px rgba(255,255,255,0.06),
+    0 0 60px 20px rgba(255,211,108,0.25),
+    inset 0 0 40px rgba(255,108,241,0.25);
+  }
+  50% { box-shadow:
+    0 0 0 10px rgba(255,255,255,0.1),
+    0 0 100px 35px rgba(255,211,108,0.45),
+    inset 0 0 60px rgba(108,241,255,0.35);
+  }
+}
+
+/* ================================
+   Responsivo
+=================================== */
+
+@media (max-width: 960px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .nav__links { display: none; } /* simplifica: podrías cambiar por menú hamburguesa */
+  .hero { padding-block: clamp(44px, 14vw, 90px); }
+  .film__title { font-size: clamp(1.6rem, 5.2vw, 2.2rem); }
+  .cards { grid-template-columns: 1fr; }
+  .footer__inner { grid-template-columns: 1fr; }
+}

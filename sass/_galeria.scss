@@ -1,0 +1,15 @@
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-3);
+
+  img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    transition: transform 180ms ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

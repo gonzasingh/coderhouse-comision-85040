@@ -1,0 +1,12 @@
+.albumes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  .album {
+    background: rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-lg);
+  }
+}

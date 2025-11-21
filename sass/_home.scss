@@ -1,21 +1,34 @@
 @use "variables" as v;
 
-.home{
-    @include v.flex(column, center, center, wrap);
-    .methome{
-        height: auto;
-        width: v.$ancho50;
-    }
-    .desc{
-        width: v.$ancho50;
-    }
-    @include v.mobile{
-        .methome{
-            width: 80vw;
-            height: auto;
-        }
-        .desc{
-            width: 80vw;
-        }
-    }
+.hero {
+  position: relative;
+  text-align: center;
+  padding-block: var(--space-4);
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(108,241,255,0.25), transparent 70%);
+    z-index: -1;
+  }
+
+  &__title {
+    font-size: var(--fs-xxl);
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: var(--fs-lg);
+    color: var(--muted);
+    margin-top: var(--space-2);
+  }
+
+  &__scribble {
+    font-family: "Homemade Apple", cursive;
+    font-size: clamp(1.3rem, 2.2vw, 5rem);
+    color: #fff;
+    transform: rotate(-4deg);
+    text-shadow: 0 2px 18px rgba(255, 211, 108, 0.35);
+  }
 }

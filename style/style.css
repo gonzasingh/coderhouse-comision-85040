@@ -191,7 +191,7 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outli
 
 .hero__subtitle {
   position:absolute;
-  top: clamp(0px, 12vw, 48px);
+  top: clamp(0px, 12vw, 4px);
   font-size: var(--fs-lg);
   color: var(--muted);
   letter-spacing: 0.14em;

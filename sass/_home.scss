@@ -1,0 +1,21 @@
+@use "variables" as v;
+
+.home{
+    @include v.flex(column, center, center, wrap);
+    .methome{
+        height: auto;
+        width: v.$ancho50;
+    }
+    .desc{
+        width: v.$ancho50;
+    }
+    @include v.mobile{
+        .methome{
+            width: 80vw;
+            height: auto;
+        }
+        .desc{
+            width: 80vw;
+        }
+    }
+}

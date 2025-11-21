@@ -1,1 +1,10 @@
-// Archivo principal de estilos SCSS //
+// Este va a ser nuestro archivo PRINCIPAL
+// sass --watch sass/style.scss styles/styles.css
+@use "variables";
+@use "header";
+@use "footer";
+@use "home";
+@use "albumes";
+@use "integrantes";
+@use "galeria";
+@use "contacto";

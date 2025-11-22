@@ -1,1 +1,46 @@
 // todo el codigo de header.scss y su responsive
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(10,10,18,0.75), rgba(10,10,18,0.35));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: var(--space-2);
+
+    &__links {
+      display: flex;
+      gap: clamp(10px, 2.2vw, 26px);
+    }
+
+    &__link {
+      font-size: var(--fs-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.92;
+      transition: color 180ms ease;
+
+      &:hover {
+        color: var(--link-hover);
+        opacity: 1;
+      }
+    }
+
+    &__cta {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      transition: transform 180ms ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255,255,255,0.35);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-4);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    input, textarea {
+      padding: var(--space-2);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    button {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      font-weight: 700;
+      padding: var(--space-2);
+      border-radius: 999px;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 0 10px var(--btn-glow);
+      }
+    }
+  }
+}

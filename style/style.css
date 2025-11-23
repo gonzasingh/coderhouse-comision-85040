@@ -64,10 +64,11 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outli
    Layout principal
 =================================== */
 
-.site {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+.desc {
+  margin: 20px auto;   /* centra horizontalmente y da espacio arriba/abajo */
+  padding: 15px;       /* espacio interno para que el texto respire */
+  max-width: 800px;
+ 
 }
 
 /* Contenedor ancho */
@@ -128,7 +129,25 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outli
   transition: border-color 180ms ease, transform 180ms ease;
 }
 .nav__cta:hover { border-color: rgba(255,255,255,0.35); transform: translateY(-1px); }
+.cont-main {
+  margin: 20px auto;   /* centra horizontalmente y da espacio arriba/abajo */
+  padding: 15px;       /* espacio interno para que el texto respire */
+  max-width: 800px;
+}
+.cont-main .fwtbt {
+    order: 3;
+}
 
+.cont-main iframe {
+    width: 30vw;
+}
+iframe {
+    border: 0;
+}
+.text-body-secondary {
+    --bs-text-opacity: 1;
+    color: rgba(189, 128, 128, 0.75) !important;
+}
 /* ================================
    Hero “Moon Music”
 =================================== */
@@ -221,14 +240,8 @@ a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outli
   align-items: center;
   flex-wrap: wrap;
 }
-.site {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.site .methome {
+
+.site .coldhome {
   height: auto;
   width: 50vw;
 }

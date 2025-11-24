@@ -294,20 +294,6 @@ iframe {
   gap: clamp(8px, 1.6vw, 18px);
   margin-top: var(--space-2);
 }
-.film__moon {
-  --size: clamp(24px, 3.6vw, 44px);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, #fff 6%, #f7f7fb 18%, #cfd2ff 45%, #8da0ff 70%, transparent 75%);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
-  position: relative;
-}
-.film__moon[data-phase="new"]     { background: radial-gradient(circle, #1a1a25 40%, #0a0a12 70%); }
-.film__moon[data-phase="waxing"]  { clip-path: ellipse(45% 50% at 60% 50%); }
-.film__moon[data-phase="full"]    { background: radial-gradient(circle at 50% 50%, #fff 10%, #f7f7fb 30%, #e6e8ff 70%); }
-.film__moon[data-phase="waning"]  { clip-path: ellipse(45% 50% at 40% 50%); }
 
 .film__cta {
   margin-top: var(--space-3);
@@ -345,7 +331,7 @@ iframe {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 28px);
 }
 .card {
@@ -373,6 +359,107 @@ iframe {
   font-size: var(--fs-sm);
   color: var(--muted);
 }
+.contacto-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: linear-gradient(to bottom right, #0a1f3d, #1c2e4a);
+  border-radius: 20px;
+  padding: 2rem;
+  color: #fff;
+  max-width: 1200px;
+  margin: 3rem auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.formulario {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 0.3rem;
+}
+
+.checkbox-group {
+  margin-top: 1rem;
+}
+.hero__bgbrillo {
+  position: absolute;
+  top: 1000;
+  left: 0;
+  width: 300px;
+  height: auto;
+  z-index: -1;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.checkbox-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+button[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.video {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-wrapper {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;   /* puntas redondeadas */
+  object-fit: cover;     /* asegura que la imagen se recorte bien */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
 
 /* ================================
    Footer

@@ -441,23 +441,64 @@ button[type="submit"] {
   border: none;
 }
 .galeria {
+  margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  grid-template-areas: "jh g1 g1 kh" "jh g1 g1 kh" "g2 g2 g3 g3" "g2 g2 g3 g3" "g4 g4 g4 g4" "g4 g4 g4 g4" "g5 g5 g5 g5" "g5 g5 g5 g5" "lu g6 g6 rt" "lu g6 g6 rt" "g7 g7 g9 g9" "g7 g7 g9 g9" "g8 g8 g8 g8" "g8 g8 g8 g8";
+  justify-items: center;
+  align-items: center;
+  row-gap: 20px;
 }
-
-.galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;   /* puntas redondeadas */
-  object-fit: cover;     /* asegura que la imagen se recorte bien */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease;
+.galeria .art {
+  width: 20vw;
+  border-radius: 15px;
 }
-
-.galeria img:hover {
-  transform: scale(1.05);
+.galeria .full {
+  width: 80vw;
+  border-radius: 25px;
+}
+.galeria .gal {
+  width: 45vw;
+  border-radius: 20px;
+}
+.galeria .g1 {
+  grid-area: g1;
+  width: 30vw;
+}
+.galeria .g2 {
+  grid-area: g2;
+}
+.galeria .g3 {
+  grid-area: g3;
+}
+.galeria .g4 {
+  grid-area: g4;
+}
+.galeria .g5 {
+  grid-area: g5;
+}
+.galeria .g6 {
+  grid-area: g6;
+}
+.galeria .g7 {
+  grid-area: g7;
+}
+.galeria .g8 {
+  grid-area: g8;
+}
+.galeria .g9 {
+  grid-area: g9;
+}
+.galeria .james {
+  grid-area: jh;
+}
+.galeria .kirk {
+  grid-area: kh;
+}
+.galeria .lars {
+  grid-area: lu;
+}
+.galeria .rob {
+  grid-area: rt;
 }
 
 

@@ -1,27 +1,72 @@
-.contacto-wrapper {
+.contacto-card {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  background-color: #f8f9fa;
+  background: linear-gradient(to bottom right, #0a1f3d, #1c2e4a);
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  max-width: 1000px;
-  margin: 2rem auto;
-}
+  padding: 2rem;
+  color: #fff;
+  max-width: 1200px;
+  margin: 3rem auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 
-.formulario {
-  flex: 1 1 60%;
-}
+  .formulario {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
 
-.video {
-  flex: 1 1 35%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
 
-.video iframe {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: none;
+      margin-top: 0.3rem;
+    }
+  }
+
+  .checkbox-group {
+    margin-top: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .video {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .video-wrapper {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #000;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
 }

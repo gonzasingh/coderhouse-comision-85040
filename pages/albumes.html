@@ -4,132 +4,137 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coldplay | Albumes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../style/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Homemade+Apple&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Homemade+Apple&display=swap"
+    rel="stylesheet" />
+  
+
 </head>
 <body>
   <div class="site">
     <!-- Header -->
     <header class="header">
-      <nav class="nav container">
-        <a href="../index.html">
-            <img src="../assets/logo.png" alt="COLDPLAY">
-        </a>
-        <div class="nav__links">
-          <a href="../index.html" class="nav__link">Inicio</a>
-          <a href="./banda.html" class="nav__link">banda</a>
-          <a href="./galeria.html" class="nav__link">galeria</a>
-        </div>
-        <div class="nav__links">
-          <a href="#" class="nav__cta">Albumes</a>
-          <a href="./contacto.html" class="nav__cta">Contacto</a>
-        </div>
-      </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+              <img src="../assets/logo.png" alt="COLDPLAY">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./banda.html">Banda</a></li>
+                <li class="nav-item"><a class="nav-link" href="./galeria.html">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="./albumes.html">Álbumes</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
     </header>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__bgalbum" src="../assets/img/bg-top-left.webp"></div>
-      <img class="AFFTF" src="../assets/img/Image-163@2x-1024x117.png"
-        alt="Moon Music Album Cover" />
-      <div class="hero__emblem"></div>
-      
-      <p class="hero__subtitle">ESCUCHA AHORA</p>
-    
-    </section>
-
-
-    <!-- News Cards -->
-    <section class="section container" id="news">
-      <div class="cards">
-        <div class="card">
-          <!-- <div class="card__media"></div> -->
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/5SGtrmYbIo0Dsg4kJ4qjM6?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Moon Music</h3>
-            <p class="card__meta">Oct 2024</p>
+  </div>    
+    <main class="cont-main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero__bgalbum" src="../assets/img/bg-top-left.webp"></div>
+        <img class="AFFTF" src="../assets/img/Image-163@2x-1024x117.png" alt="Moon Music Album Cover" />
+        <div class="hero__emblem"></div>
+        <p class="hero__subtitle">ESCUCHA AHORA</p>
+      </section>
+      <!-- News Cards -->
+      <section class="section container" id="news">
+        <div class="cards">
+          <div class="card">
+            <!-- <div class="card__media"></div> -->
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/5SGtrmYbIo0Dsg4kJ4qjM6?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Moon Music</h3>
+              <p class="card__meta">Oct 2024</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/06mXfvDsRZNfnsGZvX2zpb?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Music of the Spheres</h3>
+              <p class="card__meta">Oct 2021</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/2FeyIYDDAQqcOJKOKhvHdr?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Everyday Life</h3>
+              <p class="card__meta">Nov 2019</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/3cfAM8b8KqJRoIzt3zLKqw?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">A Head Full of Dreams</h3>
+              <p class="card__meta">Dic 2015</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/2G4AUqfwxcV1UdQjm2ouYr?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Ghost Stories</h3>
+              <p class="card__meta">May 2014</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/2R7iJz5uaHjLEVnMkloO18?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Mylo Xyloto</h3>
+              <p class="card__meta">Oct 2011</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/1CEODgTmTwLyabvwd7HBty?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">Viva La Vida or Death and all His Friends</h3>
+              <p class="card__meta">Jun 2008</p>
+            </div>
+          </div>
+          <div class="card">
+            <iframe data-testid="embed-iframe" style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/4E7bV0pzG0LciBSWTszra6?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <div class="card__content">
+              <h3 class="card__title">X&Y</h3>
+              <p class="card__meta">Jun 2005</p>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/06mXfvDsRZNfnsGZvX2zpb?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Music of the Spheres</h3>
-            <p class="card__meta">Oct 2021</p>
-          </div>
-        </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/2FeyIYDDAQqcOJKOKhvHdr?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Everyday Life</h3>
-            <p class="card__meta">Nov 2019</p>
-          </div>
-        </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/3cfAM8b8KqJRoIzt3zLKqw?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">A Head Full of Dreams</h3>
-            <p class="card__meta">Dic 2015</p>
-          </div>
-        </div>
-        
-
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/2G4AUqfwxcV1UdQjm2ouYr?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Ghost Stories</h3>
-            <p class="card__meta">May 2014</p>
-          </div>
-        </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/2R7iJz5uaHjLEVnMkloO18?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Mylo Xyloto</h3>
-            <p class="card__meta">Oct 2011</p>
-          </div>
-        </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/1CEODgTmTwLyabvwd7HBty?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">Viva La Vida or Death and all His Friends</h3>
-            <p class="card__meta">Jun 2008</p>
-          </div>
-        </div>
-        <div class="card">
-          <iframe data-testid="embed-iframe" style="border-radius:12px"
-            src="https://open.spotify.com/embed/album/4E7bV0pzG0LciBSWTszra6?utm_source=generator" width="100%" height="352"
-            frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
-          <div class="card__content">
-            <h3 class="card__title">X&Y</h3>
-            <p class="card__meta">Jun 2005</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+      </section>
+      <main class="site">
     <!-- Footer -->
     <footer class="footer">
       <div class="footer__inner container">
@@ -149,5 +154,22 @@
       </div>
     </footer>
   </div> 
+<script>
+  const toggle = document.querySelector('.nav__toggle');
+  const menu = document.querySelector('.nav__menu');
+  const overlay = document.querySelector('.nav__overlay');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

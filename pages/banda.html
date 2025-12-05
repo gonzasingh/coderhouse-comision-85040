@@ -3,30 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coldplay | Banda</title>
+  
+  <title>Coldplay | Fan pages - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../style/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Homemade+Apple&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Homemade+Apple&display=swap"
+    rel="stylesheet" />
 </head>
 <body>
   <div class="site">
     <!-- Header -->
     <header class="header">
-      <nav class="nav container">
-        <a href="../index.html">
-            <img src="../assets/logo.png" alt="COLDPLAY">
-        </a>
-        <div class="nav__links">
-          <a href="../index.html" class="nav__link">Inicio</a>
-          <a href="#" class="nav__link">banda</a>
-          <a href="./galeria.html" class="nav__link">galeria</a>
-        </div>
-        <div class="nav__links">
-          <a href="./albumes.html" class="nav__cta">Albumes</a>
-          <a href="./contacto.html" class="nav__cta">Contacto</a>
-        </div>
-      </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+              <img src="../assets/logo.png" alt="COLDPLAY">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./banda.html">Banda</a></li>
+                <li class="nav-item"><a class="nav-link" href="./galeria.html">Galería</a></li>
+                <li class="nav-item"><a class="nav-link" href="./albumes.html">Álbumes</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
     </header>
 
     <!-- Hero -->
@@ -67,7 +77,7 @@
           </div>
         </div>
       </div>
-    </section>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -88,5 +98,22 @@
       </div>
     </footer>
   </div> 
+<script>
+  const toggle = document.querySelector('.nav__toggle');
+  const menu = document.querySelector('.nav__menu');
+  const overlay = document.querySelector('.nav__overlay');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

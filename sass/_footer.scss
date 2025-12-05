@@ -11,30 +11,28 @@
 
   &__links {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px 18px;
     opacity: 0.9;
 
-    a {
-      font-size: var(--fs-sm);
-    }
+    a { font-size: var(--fs-sm); }
   }
 
   &__social {
     display: flex;
+    align-items: center;
     gap: 12px;
 
     a {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
+      width: 34px; height: 34px;
+      display: grid; place-items: center;
       border: 1px solid rgba(255,255,255,0.18);
       border-radius: 50%;
-      transition: transform 160ms ease;
+      transition: border-color 160ms ease, transform 160ms ease;
 
       &:hover {
-        transform: translateY(-1px);
         border-color: rgba(255,255,255,0.35);
+        transform: translateY(-1px);
       }
     }
   }

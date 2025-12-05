@@ -1,33 +1,44 @@
-@use "variables" as v;
-
 .hero {
   position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding-block: var(--space-4);
 
-  &__bg {
+  &__bg, &__bgalbum {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle, rgba(108,241,255,0.25), transparent 70%);
-    z-index: -1;
+    inset: -10% -20%;
+    z-index: -2;
+    filter: saturate(110%) contrast(105%);
+    opacity: 0.28;
+    pointer-events: none;
+    background:
+      radial-gradient(1200px 800px at 70% 30%, rgba(108,241,255,0.25), transparent 70%),
+      radial-gradient(900px 600px at 25% 65%, rgba(255,108,241,0.25), transparent 70%),
+      radial-gradient(700px 500px at 50% 50%, rgba(255,211,108,0.25), transparent 75%);
   }
 
   &__title {
+    margin-top: var(--space-3);
     font-size: var(--fs-xxl);
     font-weight: 800;
     text-transform: uppercase;
   }
 
   &__subtitle {
+    position: absolute;
+    top: clamp(0px, 12vw, 4px);
     font-size: var(--fs-lg);
     color: var(--muted);
-    margin-top: var(--space-2);
+    text-transform: uppercase;
   }
 
   &__scribble {
-    font-family: "Homemade Apple", cursive;
-    font-size: clamp(1.3rem, 2.2vw, 5rem);
+    position: absolute;
+    font-family: "Homemade Apple", "Bradley Hand", "Comic Sans MS", system-ui, sans-serif;
+    font-size: clamp(5rem, 2.2vw, 1.3rem);
     color: #fff;
+    opacity: 0.9;
     transform: rotate(-4deg);
     text-shadow: 0 2px 18px rgba(255, 211, 108, 0.35);
   }
